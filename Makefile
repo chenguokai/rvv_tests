@@ -45,7 +45,7 @@ DEBUG: ${OBJECTS}
 	@echo $<
 
 VIRTUAL_TARGET: ${DEBUG} ${OBJECTS} ${OBJECTS_BIN} ${OBJECTS_DISASSEMBLY}
-	@echo "Volia!"
+	@echo "Voila!"
 
 clean:
 	rm *.elf

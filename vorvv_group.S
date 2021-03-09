@@ -1,10 +1,20 @@
 .text
 _start:
     li a1, 32
-    vsetvli a1, a1, e8, m2, tu, mu
+    vsetvli a1, a1, e8, m1, tu, mu
     la a0, _data
     vle8.v v0, (a0)
-    vadd.vv v0, v0, v2
+    vle8.v v1, (a0)
+    vle8.v v2, (a0)
+    vle8.v v3, (a0)
+    addi a0, a0, 16
+    vle8.v v4, (a0)
+    vle8.v v5, (a0)
+    vle8.v v6, (a0)
+    vle8.v v7, (a0)
+    /* start grouping */
+    vsetvli a1, a1, e8, m4, tu, mu
+    vor.vv v4, v0, v4
 1:
     j 1b
 _data:

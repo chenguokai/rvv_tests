@@ -3,11 +3,11 @@ _start:
     li a1, 32
     vsetvli a1, a1, e8, m1, tu, mu
     la a0, _data
-    vle8.v v0, (a0)
-    vadd.vv v0, v0, v2
+    vle8.v v1, (a0)
+    vadd.vi v1, v1, 7
     li a1, 16
     vsetvli a1, a1, e16, m1, tu, mu
-    vadd.vv v0, v0, v2
+    vadd.vi v1, v1, 9
     /*
     li a1, 8
     vsetvli a1, a1, e32, m1, tu, mu

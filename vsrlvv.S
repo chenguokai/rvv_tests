@@ -4,18 +4,20 @@ _start:
     vsetvli a1, a1, e8, m1, tu, mu
     la a0, _data
     vle8.v v0, (a0)
-    vadd.vv v0, v0, v2
+    vle8.v v1, (a0)
+    vle8.v v2, (a0)
+    vle8.v v3, (a0)
+    addi a0, a0, 16
+    vle8.v v4, (a0)
+    vle8.v v5, (a0)
+    vle8.v v6, (a0)
+    vle8.v v7, (a0)
+
+    vsetvli a1, a1, e8, m1, tu, mu
+    vsrl.vv v4, v0, v4
     li a1, 16
     vsetvli a1, a1, e16, m1, tu, mu
-    vadd.vv v0, v0, v2
-    /*
-    li a1, 8
-    vsetvli a1, a1, e32, m1, tu, mu
-    vadd.vv v0, v0, v2
-    li a1, 4
-    vsetvli a1, a1, e64, m1, tu, mu
-    vadd.vv v0, v0, v2
-    */
+    vsrl.vv v0, v0, v2
 1:
     j 1b
 _data:

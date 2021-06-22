@@ -1,0 +1,99 @@
+.text
+_start:
+    li a1, 32
+    vsetvli a1, a1, e8, m1, tu, mu
+    la a0, _data
+    vle8.v v0, (a0)
+    vle8.v v1, (a0)
+    vle8.v v2, (a0)
+    vle8.v v3, (a0)
+    addi a0, a0, 16
+    vle8.v v4, (a0)
+    vle8.v v5, (a0)
+    vle8.v v6, (a0)
+    vle8.v v7, (a0)
+
+    vsetvli a1, a1, e8, m1, tu, mu
+    vrem.vv v4, v4, v0
+    li a1, 16
+    vsetvli a1, a1, e16, m1, tu, mu
+    vrem.vv v0, v2, v1
+
+1:
+    j 1b
+_data:
+    .byte 0x1
+    .byte 0x2
+    .byte 0x3
+    .byte 0x4
+    .byte 0x5
+    .byte 0x6
+    .byte 0x7
+    .byte 0x8
+    .byte 0x9
+    .byte 0xa
+    .byte 0xb
+    .byte 0xc
+    .byte 0xd
+    .byte 0xe
+    .byte 0xf
+    .byte 0x1
+    .byte 0x2
+    .byte 0x3
+    .byte 0x4
+    .byte 0x5
+    .byte 0x6
+    .byte 0x7
+    .byte 0x8
+    .byte 0x9
+    .byte 0xa
+    .byte 0xb
+    .byte 0xc
+    .byte 0xd
+    .byte 0xe
+    .byte 0xf
+    .byte 0x1
+    .byte 0x2
+    .byte 0x3
+    .byte 0x4
+    .byte 0x5
+    .byte 0x6
+    .byte 0x7
+    .byte 0x8
+    .byte 0x9
+    .byte 0xa
+    .byte 0xb
+    .byte 0xc
+    .byte 0xd
+    .byte 0xe
+    .byte 0xf
+    .byte 0x1
+    .byte 0x2
+    .byte 0x3
+    .byte 0x4
+    .byte 0x5
+    .byte 0x6
+    .byte 0x7
+    .byte 0x8
+    .byte 0x9
+    .byte 0xa
+    .byte 0xb
+    .byte 0xc
+    .byte 0xd
+    .byte 0xe
+    .byte 0xf
+    .byte 0x1
+    .byte 0x2
+    .byte 0x3
+    .byte 0x4
+    .byte 0x5
+    .byte 0x6
+    .byte 0x7
+    .byte 0x8
+    .byte 0x9
+    .byte 0xa
+    .byte 0xb
+    .byte 0xc
+    .byte 0xd
+    .byte 0xe
+    .byte 0xf
